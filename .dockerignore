@@ -1,0 +1,10 @@
+.git
+.gitignore
+.github
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+postman
+*.jpg
+README.md
