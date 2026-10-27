@@ -1,0 +1,12 @@
+name: ci
+
+on:
+  push:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t api-test .
+      - run: docker run --rm api-test
