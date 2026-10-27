@@ -1,0 +1,42 @@
+{
+  "info": {
+    "name": "REST & GraphQL API homework",
+    "description": "GraphQL subscription Greetings с SSE.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "graphql_url",
+      "value": "https://graphql.postman-echo.com/graphql"
+    }
+  ],
+  "item": [
+    {
+      "name": "GraphQL subscription: Greetings",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "text/event-stream"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"subscription Greetings { greetings }\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{graphql_url}}",
+        "description": "Потоковый SSE-ответ: сервер присылает события next с greetings (Hi, Bonjour, Hola, Ciao, Zdravo) и завершает поток событием complete. В Postman откройте запрос и нажмите Send — события появятся в панели ответа по мере поступления."
+      }
+    }
+  ]
+}
